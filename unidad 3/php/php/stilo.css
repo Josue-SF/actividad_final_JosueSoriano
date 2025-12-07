@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+header {
+    background-color: black;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.input-area {
+    background-color: #ffd700;
+    padding: 20px;
+    color: black;
+}
+
+/* El formulario debe cubrir toda el área para que el botón esté centrado */
+.input-area form {
+    display: contents; /* Permite que los hijos usen las propiedades de la .input-area */
+}
+
+.input-group {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-area label {
+    font-size: 1.1em;
+    color: #1e3a24;
+}
+
+.input-area input[type="number"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 80px;
+    text-align: center;
+    font-size: 1em;
+}
+
+#mostrarBtn {
+    display: block;
+    margin: 15px auto 0;
+    padding: 8px 20px;
+    background-color: #c0c0c0;
+    color: black;
+    border: 2px solid #5a5a5a;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#mostrarBtn:hover {
+    background-color: #a0a0a0;
+}
+
+
+.result-header {
+    background-color: black;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.result-header h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.result-area {
+    background-color: #FF4500;
+    padding: 20px;
+    text-align: center;
+}
+
+#tabla-resultado table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+#tabla-resultado th, #tabla-resultado td {
+    border: 2px solid #ff0000;
+    padding: 8px;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #ff0000;
+    background-color: black;
+}
+
+#tabla-resultado th {
+    background-color: black; /* Se corrige el color faltante */
+    color: #ff0000;
+    font-size: 1.2em;
+}
+
+/* Nota: La llave extra al final del CSS original ha sido eliminada */
