@@ -1,0 +1,470 @@
+
+        /* Reset CSS: Elimina márgenes y padding por defecto de todos los elementos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Incluye padding y border en el ancho total */
+        }
+
+        /* Estilos generales del body */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna y legible */
+            line-height: 1.6; /* Espaciado entre líneas para mejor lectura */
+            color: #333; /* Color de texto gris oscuro */
+        }
+
+        /* ========== HEADER - Barra de navegación superior ========== */
+        header {
+            background-color: #1a1a1a; /* Fondo negro (color corporativo Andatti) */
+            padding: 1rem 0; /* Espaciado interno vertical */
+            position: sticky; /* Se mantiene fijo al hacer scroll */
+            top: 0; /* Pegado al tope de la ventana */
+            z-index: 1000; /* Aparece sobre otros elementos */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3); /* Sombra para dar profundidad */
+        }
+
+        /* Contenedor principal de la navegación */
+        nav {
+            max-width: 1200px; /* Ancho máximo del contenido */
+            margin: 0 auto; /* Centra horizontalmente */
+            display: flex; /* Flexbox para alinear elementos */
+            justify-content: space-between; /* Separa logo y menú a los extremos */
+            align-items: center; /* Alinea verticalmente al centro */
+            padding: 0 2rem; /* Espaciado horizontal */
+        }
+
+        /* Estilo del logo Andatti */
+        .logo {
+            font-size: 2rem; /* Tamaño grande para destacar */
+            font-weight: bold; /* Texto en negrita */
+            color: #FFC600; /* Amarillo corporativo Andatti */
+            text-decoration: none; /* Elimina subrayado del enlace */
+            display: flex; /* Flexbox para alinear emoji y texto */
+            align-items: center; /* Centra verticalmente */
+            gap: 0.5rem; /* Espacio entre emoji y texto */
+        }
+
+        /* Emoji de taza de café antes del logo */
+        .logo::before {
+            content: "☕"; /* Carácter emoji */
+        }
+
+        /* Contenedor de enlaces de navegación */
+        .nav-links {
+            display: flex; /* Disposición horizontal */
+            list-style: none; /* Elimina bullets de la lista */
+            gap: 2rem; /* Espacio entre enlaces */
+        }
+
+        /* Estilo individual de cada enlace del menú */
+        .nav-links a {
+            color: #fff; /* Texto blanco */
+            text-decoration: none; /* Sin subrayado */
+            transition: color 0.3s; /* Transición suave del color */
+            font-weight: 500; /* Peso medio de la fuente */
+        }
+
+        /* Efecto hover en enlaces - cambia a amarillo */
+        .nav-links a:hover {
+            color: #FFC600; /* Color amarillo Andatti */
+        }
+
+        /* ========== HERO SECTION - Sección principal de bienvenida ========== */
+        .hero {
+            /* Gradiente de amarillo (color corporativo) */
+            background: linear-gradient(135deg, #FFC600 0%, #ffdb4d 100%);
+            padding: 6rem 2rem; /* Espaciado interno generoso */
+            text-align: center; /* Centra el contenido */
+            position: relative; /* Para posicionar el pseudo-elemento */
+            overflow: hidden; /* Oculta elementos que sobresalgan */
+        }
+
+        /* Patrón de puntos decorativo en el fondo del hero */
+        .hero::before {
+            content: ""; /* Necesario para mostrar el pseudo-elemento */
+            position: absolute; /* Posición absoluta respecto al hero */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /* Crea un patrón de círculos sutiles */
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(0,0,0,0.05) 2%, transparent 2%),
+                radial-gradient(circle at 80% 80%, rgba(0,0,0,0.05) 2%, transparent 2%);
+            background-size: 50px 50px; /* Tamaño del patrón repetido */
+        }
+
+        /* Contenedor del contenido principal del hero */
+        .hero-content {
+            max-width: 800px; /* Ancho máximo para mejor legibilidad */
+            margin: 0 auto; /* Centra horizontalmente */
+            position: relative; /* Aparece sobre el patrón de fondo */
+            z-index: 1; /* Asegura que esté sobre el pseudo-elemento */
+        }
+
+        /* Título principal del hero */
+        .hero h1 {
+            font-size: 3.5rem; /* Tamaño grande y llamativo */
+            color: #1a1a1a; /* Negro para contraste */
+            margin-bottom: 1rem; /* Espacio inferior */
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.3); /* Sombra sutil para profundidad */
+        }
+
+        /* Párrafo descriptivo del hero */
+        .hero p {
+            font-size: 1.3rem; /* Tamaño medio-grande */
+            color: #333; /* Gris oscuro */
+            margin-bottom: 2rem; /* Espacio antes del botón */
+        }
+
+        /* Botón de llamado a la acción (CTA) */
+        .cta-button {
+            display: inline-block; /* Para poder aplicar padding */
+            background-color: #1a1a1a; /* Fondo negro */
+            color: #FFC600; /* Texto amarillo (inversión de colores) */
+            padding: 1rem 2.5rem; /* Espaciado interno generoso */
+            text-decoration: none; /* Sin subrayado */
+            border-radius: 50px; /* Bordes muy redondeados (pill shape) */
+            font-weight: bold; /* Texto en negrita */
+            font-size: 1.1rem; /* Tamaño ligeramente mayor */
+            transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Sombra para efecto elevado */
+        }
+
+        /* Efecto hover del botón CTA - se eleva */
+        .cta-button:hover {
+            transform: translateY(-3px); /* Mueve hacia arriba 3px */
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3); /* Sombra más pronunciada */
+        }
+
+        /* ========== SECCIONES GENERALES ========== */
+        /* Estilo base para todas las secciones de contenido */
+        section {
+            padding: 4rem 2rem; /* Espaciado interno generoso */
+            max-width: 1200px; /* Ancho máximo para lectura óptima */
+            margin: 0 auto; /* Centra la sección horizontalmente */
+        }
+
+        /* Títulos principales de cada sección (h2) */
+        h2 {
+            font-size: 2.5rem; /* Tamaño grande */
+            text-align: center; /* Centrado */
+            margin-bottom: 3rem; /* Espacio inferior amplio */
+            color: #1a1a1a; /* Negro corporativo */
+            position: relative; /* Para posicionar el pseudo-elemento */
+            padding-bottom: 1rem; /* Espacio para la línea decorativa */
+        }
+
+        /* Línea decorativa amarilla debajo de cada título h2 */
+        h2::after {
+            content: ""; /* Necesario para mostrar el pseudo-elemento */
+            position: absolute; /* Posicionamiento absoluto */
+            bottom: 0; /* Al fondo del h2 */
+            left: 50%; /* Centrado horizontal */
+            transform: translateX(-50%); /* Ajuste para centrado perfecto */
+            width: 80px; /* Ancho de la línea */
+            height: 4px; /* Grosor de la línea */
+            background-color: #FFC600; /* Amarillo Andatti */
+            border-radius: 2px; /* Bordes ligeramente redondeados */
+        }
+
+        /* ========== SECCIÓN MENÚ ========== */
+        /* Grid responsive para mostrar items del menú */
+        .menu-grid {
+            display: grid; /* Sistema de cuadrícula */
+            /* Columnas automáticas: mínimo 280px, máximo 1fr (fracción disponible) */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem; /* Espacio entre tarjetas */
+        }
+
+        /* Tarjeta individual de producto del menú */
+        .menu-item {
+            background: #fff; /* Fondo blanco */
+            padding: 2rem; /* Espaciado interno */
+            border-radius: 15px; /* Bordes redondeados */
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1); /* Sombra suave */
+            transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+            border: 2px solid transparent; /* Borde transparente por defecto */
+        }
+
+        /* Efecto hover en tarjetas del menú - se elevan y cambian borde */
+        .menu-item:hover {
+            transform: translateY(-5px); /* Mueve hacia arriba */
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15); /* Sombra más pronunciada */
+            border-color: #FFC600; /* Borde amarillo visible */
+        }
+
+        /* Título del producto (h3) dentro de la tarjeta */
+        .menu-item h3 {
+            color: #1a1a1a; /* Negro corporativo */
+            margin-bottom: 0.5rem; /* Espacio inferior */
+            font-size: 1.5rem; /* Tamaño destacado */
+        }
+
+        /* Precio del producto */
+        .menu-item .price {
+            color: #FFC600; /* Amarillo Andatti para destacar */
+            font-size: 1.3rem; /* Tamaño medio-grande */
+            font-weight: bold; /* Negrita */
+            margin: 0.5rem 0; /* Márgenes verticales */
+        }
+
+        /* Descripción del producto */
+        .menu-item p {
+            color: #666; /* Gris medio para texto secundario */
+            font-size: 0.95rem; /* Tamaño ligeramente menor */
+        }
+
+        /* Etiqueta de categoría (CALIENTE/FRÍO) */
+        .category-badge {
+            display: inline-block; /* Para aplicar padding */
+            background-color: #FFC600; /* Fondo amarillo */
+            color: #1a1a1a; /* Texto negro */
+            padding: 0.3rem 1rem; /* Espaciado interno compacto */
+            border-radius: 20px; /* Bordes muy redondeados (pill shape) */
+            font-size: 0.85rem; /* Tamaño pequeño */
+            font-weight: bold; /* Negrita */
+            margin-top: 0.5rem; /* Espacio superior */
+        }
+
+        /* ========== SECCIÓN UBICACIÓN ========== */
+        /* Fondo gris claro para alternar con secciones blancas */
+        #ubicacion {
+            background-color: #f9f9f9;
+        }
+
+        /* Contenedor grid para dividir en 2 columnas: info y mapa */
+        .location-container {
+            display: grid; /* Sistema de cuadrícula */
+            grid-template-columns: 1fr 1fr; /* 2 columnas iguales */
+            gap: 3rem; /* Espacio entre columnas */
+            align-items: start; /* Alinea elementos al inicio */
+        }
+
+        /* Contenedor de la información de ubicaciones */
+        .location-info {
+            background: #fff; /* Fondo blanco */
+            padding: 2rem; /* Espaciado interno */
+            border-radius: 15px; /* Bordes redondeados */
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1); /* Sombra suave */
+        }
+
+        /* Cada ubicación individual dentro del contenedor */
+        .location-item {
+            margin-bottom: 2rem; /* Espacio entre ubicaciones */
+            padding-bottom: 2rem; /* Espaciado inferior */
+            border-bottom: 1px solid #eee; /* Línea separadora sutil */
+        }
+
+        /* Última ubicación no necesita borde inferior */
+        .location-item:last-child {
+            border-bottom: none; /* Sin borde */
+            margin-bottom: 0; /* Sin margen */
+            padding-bottom: 0; /* Sin padding */
+        }
+
+        /* Título de cada ubicación (nombre de la sucursal) */
+        .location-item h3 {
+            color: #1a1a1a; /* Negro corporativo */
+            margin-bottom: 0.5rem; /* Espacio inferior */
+            font-size: 1.3rem; /* Tamaño medio-grande */
+        }
+
+        /* Párrafos con información de dirección */
+        .location-item p {
+            color: #666; /* Gris medio */
+            margin: 0.3rem 0; /* Márgenes verticales pequeños */
+        }
+
+        /* Placeholder para el mapa (puede reemplazarse con mapa real) */
+        .map-placeholder {
+            /* Gradiente amarillo corporativo */
+            background: linear-gradient(135deg, #FFC600 0%, #ffdb4d 100%);
+            border-radius: 15px; /* Bordes redondeados */
+            height: 100%; /* Ocupa toda la altura disponible */
+            min-height: 400px; /* Altura mínima igual al contenedor de ubicaciones */
+            display: flex; /* Flexbox para centrar contenido */
+            align-items: center; /* Centra verticalmente */
+            justify-content: center; /* Centra horizontalmente */
+            font-size: 3rem; /* Icono grande */
+            color: #1a1a1a; /* Color negro */
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1); /* Sombra suave */
+            overflow: hidden; /* Oculta contenido que sobresalga */
+            position: relative; /* Para posicionar la imagen correctamente */
+        }
+
+        /* Estilo para imagen dentro del placeholder del mapa */
+        .map-placeholder img {
+            width: 100%; /* Ocupa todo el ancho del contenedor */
+            height: 100%; /* Ocupa toda la altura del contenedor */
+            object-fit: cover; /* Cubre el área sin distorsionar, recorta si es necesario */
+            object-position: center; /* Centra la imagen */
+            border-radius: 15px; /* Mantiene los bordes redondeados */
+        }
+
+        /* ========== SECCIÓN HORARIOS ========== */
+        /* Grid responsive para tarjetas de horarios */
+        .schedule-grid {
+            display: grid; /* Sistema de cuadrícula */
+            /* Columnas automáticas: mínimo 250px, se ajustan al espacio */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem; /* Espacio entre tarjetas */
+            max-width: 900px; /* Ancho máximo del grid */
+            margin: 0 auto; /* Centra el grid */
+        }
+
+        /* Tarjeta individual de horario */
+        .schedule-card {
+            /* Gradiente negro a gris oscuro */
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+            padding: 2rem; /* Espaciado interno */
+            border-radius: 15px; /* Bordes redondeados */
+            text-align: center; /* Texto centrado */
+            color: #fff; /* Texto blanco */
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2); /* Sombra */
+            transition: transform 0.3s; /* Transición suave */
+        }
+
+        /* Efecto hover en tarjetas de horario - escala ligeramente */
+        .schedule-card:hover {
+            transform: scale(1.05); /* Aumenta tamaño 5% */
+        }
+
+        /* Título del día (h3) en tarjeta de horario */
+        .schedule-card h3 {
+            color: #FFC600; /* Amarillo Andatti */
+            margin-bottom: 1rem; /* Espacio inferior */
+            font-size: 1.5rem; /* Tamaño destacado */
+        }
+
+        /* Párrafos con información de horarios */
+        .schedule-card p {
+            font-size: 1.2rem; /* Tamaño medio-grande */
+            margin: 0.5rem 0; /* Márgenes verticales */
+        }
+
+        /* Contact Section */
+        #contacto {
+            background-color: #f9f9f9;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #FFC600;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-button {
+            width: 100%;
+            background-color: #FFC600;
+            color: #1a1a1a;
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .submit-button:hover {
+            background-color: #e6b000;
+            transform: translateY(-2px);
+        }
+
+        /* ========== FOOTER - Pie de página ========== */
+        footer {
+            background-color: #1a1a1a; /* Fondo negro corporativo */
+            color: #fff; /* Texto blanco */
+            text-align: center; /* Contenido centrado */
+            padding: 2rem; /* Espaciado interno */
+        }
+
+        /* Párrafos dentro del footer */
+        footer p {
+            margin: 0.5rem 0; /* Márgenes verticales pequeños */
+        }
+
+        /* Nombre de marca destacado en el footer */
+        .footer-brand {
+            color: #FFC600; /* Amarillo Andatti */
+            font-weight: bold; /* Negrita */
+        }
+
+        /* ========== RESPONSIVE DESIGN - Media Queries ========== */
+        /* Adaptaciones para tablets y móviles (768px o menos) */
+        @media (max-width: 768px) {
+            /* Menú de navegación en columna vertical para móviles */
+            .nav-links {
+                flex-direction: column; /* Apila enlaces verticalmente */
+                gap: 1rem; /* Reduce espacio entre enlaces */
+            }
+
+            /* Ajuste del título hero para pantallas pequeñas */
+            .hero h1 {
+                font-size: 2.5rem; /* Reduce tamaño del título */
+            }
+
+            /* Ajuste del párrafo hero para pantallas pequeñas */
+            .hero p {
+                font-size: 1.1rem; /* Reduce tamaño del texto */
+            }
+
+            /* Ajuste de títulos h2 para móviles */
+            h2 {
+                font-size: 2rem; /* Reduce tamaño */
+            }
+
+            /* Contenedor de ubicación en una sola columna */
+            .location-container {
+                grid-template-columns: 1fr; /* Una columna en lugar de dos */
+            }
+
+            /* Grid de horarios en una sola columna */
+            .schedule-grid {
+                grid-template-columns: 1fr; /* Una columna */
+            }
+
+            /* Reduce padding del formulario en móviles */
+            .contact-container {
+                padding: 2rem; /* Menos espaciado interno */
+            }
+        }
