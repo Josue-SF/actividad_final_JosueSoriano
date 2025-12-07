@@ -1,0 +1,154 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white; 
+  background: url("tetr.jpg") no-repeat center center fixed;
+  background-size: cover; 
+}
+
+header {
+background: #111a33;
+padding: 20px;
+text-align: center;
+}
+header h1 {
+margin: 0;
+font-size: 2rem;
+color: #ff6b6b;
+}
+nav {
+margin-top: 10px;
+}
+nav a {
+color: #f0f0f0;
+text-decoration: none;
+margin: 0 10px;
+padding: 6px 10px;
+border-radius: 6px;
+}
+nav a:hover {
+background: #ff6b6b;
+color: #0b1220;
+}
+.container {
+display: grid;
+grid-template-columns: 3fr 1fr;
+gap: 20px;
+max-width: 1100px;
+margin: auto;
+padding: 20px;
+}
+article {
+background: #1a223d;
+padding: 20px;
+border-radius: 10px;
+}
+article h2 {
+color: #ffd166;
+}
+aside {
+background: #1a223d;
+padding: 20px;
+border-radius: 10px;
+}
+aside h3 {
+color: #06d6a0;
+}
+footer {
+background: #111a33;
+text-align: center;
+padding: 15px;
+font-size: 0.9rem;
+margin-top: 20px;
+}
+/* a partir de aqui es para la consola */
+.gameboy {
+  width: 250px;
+  height: 450px;
+  background: red;
+  border-radius: 20px;
+  position: relative;
+  margin: 20px auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  border: 5px solid #222;
+}
+
+.screen {
+  width: 180px;
+  height: 200px;
+  background: black;
+  border: 5px solid #222;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+}
+
+.dpad {
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+
+.dpad div {
+  position: absolute;
+  background: #333;
+  border-radius: 5px;
+}
+
+.dpad .up, .dpad .down {
+  width: 20px;
+  height: 30px;
+  left: 20px;
+}
+
+.dpad .up { top: 0; }
+.dpad .down { bottom: 0; }
+
+.dpad .left, .dpad .right {
+  width: 30px;
+  height: 20px;
+  top: 20px;
+}
+
+.dpad .left { left: 0; }
+.dpad .right { right: 0; }
+
+.buttons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.btn {
+  width: 40px;
+  height: 40px;
+  background: #444;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  box-shadow: inset -2px -2px 4px rgba(0,0,0,0.6);
+  cursor: pointer;
+}
+
+.btn.a { background: #900; }
+.btn.b { background: #006; }
+
